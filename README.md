@@ -1,5 +1,4 @@
-Docker Image Packaging for CentOS
-=================================
+# Docker Image Packaging for CentOS
 
 [![Travis](https://img.shields.io/travis/alvistack/docker-centos.svg)](https://travis-ci.org/alvistack/docker-centos)
 [![GitHub release](https://img.shields.io/github/release/alvistack/docker-centos.svg)](https://github.com/alvistack/docker-centos/releases)
@@ -10,23 +9,21 @@ CentOS Linux is a community-supported distribution derived from sources freely p
 
 Learn more about CentOS: <https://www.centos.org/>
 
-Supported Tags and Respective `Dockerfile` Links
-------------------------------------------------
+## Supported Tags and Respective `Dockerfile` Links
 
--   [`latest` (master/Dockerfile)](https://github.com/alvistack/docker-centos/blob/master/Dockerfile)
--   [`7` (7/Dockerfile)](https://github.com/alvistack/docker-centos/blob/7/Dockerfile)
--   [`6` (6/Dockerfile)](https://github.com/alvistack/docker-centos/blob/6/Dockerfile)
+  - [`latest` (master/Dockerfile)](https://github.com/alvistack/docker-centos/blob/master/Dockerfile)
+  - [`7` (7/Dockerfile)](https://github.com/alvistack/docker-centos/blob/7/Dockerfile)
+  - [`6` (6/Dockerfile)](https://github.com/alvistack/docker-centos/blob/6/Dockerfile)
 
-Overview
---------
+## Overview
 
 This Docker container makes it easy to get an instance of SSHD up and running with CentOS.
 
 Based on [Official CentOS Docker Image](https://hub.docker.com/_/centos/) with some minor hack:
 
--   Handle `ENTRYPOINT` with [dumb-init](https://github.com/Yelp/dumb-init)
--   Handle `CMD` with SSHD
--   Self initialize with Ansible, by dogfooding with Ansible Playbook
+  - Handle `ENTRYPOINT` with [dumb-init](https://github.com/Yelp/dumb-init)
+  - Handle `CMD` with SSHD
+  - Self initialize with Ansible, by dogfooding with Ansible Playbook
 
 ### Quick Start
 
@@ -61,21 +58,17 @@ Now you could SSH to it as normal:
 
     ssh root@localhost -p 2222
 
-Versioning
-----------
+## Versioning
 
 The `latest` tag matches the most recent version of this repository. Thus using `alvistack/centos:latest` or `alvistack/centos` will ensure you are running the most up to date version of this image.
 
-License
--------
+## License
 
--   Code released under [Apache License 2.0](LICENSE)
--   Docs released under [CC BY 4.0](http://creativecommons.org/licenses/by/4.0/)
+  - Code released under [Apache License 2.0](LICENSE)
+  - Docs released under [CC BY 4.0](http://creativecommons.org/licenses/by/4.0/)
 
-Author Information
-------------------
+## Author Information
 
--   Wong Hoi Sing Edison
-    -   <https://twitter.com/hswong3i>
-    -   <https://github.com/hswong3i>
-
+  - Wong Hoi Sing Edison
+      - <https://twitter.com/hswong3i>
+      - <https://github.com/hswong3i>
