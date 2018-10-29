@@ -1,8 +1,10 @@
 # Docker Image Packaging for CentOS
 
-## 7.5-0alvistack1 - TBC
+## 7.5.x-0alvistack1 - TBC
 
-  - CentOS 6.10/7.1804 based
-  - Running SSHD with Docker
+## 7.5.1804-0alvistack1 - 2018-10-29
+
+  - CentOS 6.10/7.5.1804 based
   - Handle ENTRYPOINT with dumb-init
-  - Pre-install with Ansible for self-configuration
+  - Handle `CMD` with SSHD
+  - Self initialize with Ansible, by dogfooding with Ansible Playbook
