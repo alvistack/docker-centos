@@ -1,6 +1,14 @@
 # Docker Image Packaging for CentOS
 
-## 7.5.1804-0alvistackx - TBC
+## 7.5.1810-0alvistackx - TBC
+
+## 7.5.1810-0alvistack1 - 2018-12-06
+
+### Major Changes
+
+  - Add CVS, SVN, GIT, Mercurial and Perforce support
+  - Replace Oracle Java JDK with OpenJDK
+  - Upgrade Node.js version
 
 ## 7.5.1804-0alvistack3 - 2018-11-20
 
