@@ -30,7 +30,7 @@ CMD        [ "docker-entrypoint.sh" ]
 # Prepare YUM depedencies
 RUN set -ex \
     && yum -y install epel-release \
-    && yum -y install curl gcc git libffi-devel openssl-devel python python-devel redhat-rpm-config \
+    && yum -y install curl gcc git libffi-devel openssl-devel python python-devel python-urllib3 redhat-rpm-config \
     && yum -y clean all
 
 # Install PIP
