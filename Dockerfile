@@ -27,10 +27,10 @@ EXPOSE 22
 ENTRYPOINT [ "dumb-init", "--" ]
 CMD        [ "docker-entrypoint.sh" ]
 
-# Prepare YUM depedencies
+# Prepare YUM dependencies
 RUN set -ex \
     && yum -y install epel-release \
-    && yum -y install curl gcc git libffi-devel openssl-devel python python-devel python-urllib3 redhat-rpm-config \
+    && yum -y install ca-certificates curl gcc git libffi-devel make openssl-devel python python-devel python-urllib3 redhat-rpm-config sudo \
     && yum -y clean all
 
 # Install PIP
