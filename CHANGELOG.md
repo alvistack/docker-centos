@@ -2,6 +2,10 @@
 
 ## 7.5.1810-0alvistackx - TBC
 
+### Major Changes
+
+  - Remove CentOS 6 support
+
 ## 7.5.1810-0alvistack1 - 2018-12-06
 
 ### Major Changes
