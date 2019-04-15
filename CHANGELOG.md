@@ -1,10 +1,16 @@
 # Docker Image Packaging for CentOS
 
-## 7.5.1810-0alvistackx - TBC
+## 7.6.1810-0alvistackx - TBC
+
+### Major Changes
+
+## 7.6.1810-0alvistack7 - 2019-04-15
 
 ### Major Changes
 
   - Remove CentOS 6 support
+  - Porting to Molecule based
+  - Add rclone support
 
 ## 7.5.1810-0alvistack1 - 2018-12-06
 
