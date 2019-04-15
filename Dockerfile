@@ -30,7 +30,7 @@ CMD        [ "docker-entrypoint.sh" ]
 # Prepare YUM dependencies
 RUN set -ex \
     && yum -y install epel-release \
-    && yum -y install ca-certificates curl gcc libffi-devel make openssl-devel python python-devel python-urllib3 redhat-rpm-config sudo \
+    && yum -y install ca-certificates curl gcc libffi-devel make openssl-devel python python-devel redhat-rpm-config sudo \
     && yum -y clean all
 
 # Install PIP
@@ -39,7 +39,7 @@ RUN set -ex \
 
 # Install PIP dependencies
 RUN set -ex \
-    && pip install ansible ansible-lint molecule yamllint \
+    && pip install --upgrade ansible ansible-lint molecule yamllint \
     && rm -rf /root/.cache/*
 
 # Copy files
@@ -49,6 +49,6 @@ COPY files /
 RUN set -ex \
     && cd /etc/ansible/roles/localhost \
     && molecule test \
+    && yum -y clean all \
     && rm -rf /root/.cache/* \
-    && rm -rf /var/lib/apt/lists/* \
     && rm -rf /tmp/*
