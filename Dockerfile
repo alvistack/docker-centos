@@ -46,5 +46,6 @@ RUN set -ex \
     && pip install --upgrade --requirement requirements.txt \
     && molecule test \
     && yum -y clean all \
+    && rm -rf /var/cache/ansible/* \
     && rm -rf /root/.cache/* \
     && rm -rf /tmp/*
