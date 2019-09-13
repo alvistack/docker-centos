@@ -24,8 +24,8 @@ WORKDIR "/root"
 
 EXPOSE 22
 
-ENTRYPOINT [ "dumb-init", "--" ]
-CMD        [ "docker-entrypoint.sh" ]
+ENTRYPOINT [ "dumb-init", "--", "docker-entrypoint.sh" ]
+CMD        [ "sshd", "-eD" ]
 
 # Prepare YUM dependencies
 RUN set -ex \
@@ -46,5 +46,6 @@ RUN set -ex \
     && pip install --upgrade --requirement requirements.txt \
     && molecule test \
     && yum -y clean all \
+    && rm -rf /var/cache/ansible/* \
     && rm -rf /root/.cache/* \
     && rm -rf /tmp/*
