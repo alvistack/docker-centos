@@ -30,12 +30,12 @@ CMD        [ "/usr/sbin/sshd", "-eD" ]
 # Prepare YUM dependencies
 RUN set -ex \
     && yum -y install epel-release https://centos7.iuscommunity.org/ius-release.rpm \
-    && yum -y install ca-certificates curl gcc git2u libffi-devel make openssl-devel python python-devel redhat-rpm-config sudo \
+    && yum -y install ca-certificates curl gcc git2u libffi-devel make openssl-devel python3 python3-devel redhat-rpm-config sudo \
     && yum -y clean all
 
 # Install PIP
 RUN set -ex \
-    && curl -skL https://bootstrap.pypa.io/get-pip.py | python
+    && curl -skL https://bootstrap.pypa.io/get-pip.py | python3
 
 # Copy files
 COPY files /
@@ -43,7 +43,7 @@ COPY files /
 # Bootstrap with Ansible
 RUN set -ex \
     && cd /etc/ansible/roles/localhost \
-    && pip install --upgrade --requirement requirements.txt \
+    && pip3 install --upgrade --requirement requirements.txt \
     && molecule dependency \
     && molecule lint \
     && molecule syntax \
