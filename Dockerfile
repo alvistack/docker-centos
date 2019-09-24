@@ -14,8 +14,8 @@
 
 FROM centos:7
 
-ENV LANG   "C.UTF-8"
-ENV LC_ALL "C.UTF-8"
+ENV LANG   "en_US.utf8"
+ENV LC_ALL "en_US.utf8"
 ENV SHELL  "/bin/bash"
 ENV TZ     "UTC"
 
@@ -49,7 +49,7 @@ RUN set -ex \
     && molecule syntax \
     && molecule converge \
     && molecule verify \
-    && yum -y clean all \
     && rm -rf /var/cache/ansible/* \
     && rm -rf /root/.cache/* \
-    && rm -rf /tmp/*
+    && rm -rf /tmp/* \
+    && yum -y clean all
