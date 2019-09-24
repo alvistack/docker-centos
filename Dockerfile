@@ -14,8 +14,8 @@
 
 FROM centos:7
 
-ENV LANG   "en_US.UTF8"
-ENV LC_ALL "en_US.UTF8"
+ENV LANG   "en_US.utf8"
+ENV LC_ALL "en_US.utf8"
 ENV SHELL  "/bin/bash"
 ENV TZ     "UTC"
 
@@ -30,12 +30,12 @@ CMD        [ "/usr/sbin/sshd", "-eD" ]
 # Prepare YUM dependencies
 RUN set -ex \
     && yum -y install epel-release https://centos7.iuscommunity.org/ius-release.rpm \
-    && yum -y install ca-certificates curl gcc git2u libffi-devel make openssl-devel python python-devel redhat-rpm-config sudo \
+    && yum -y install ca-certificates curl gcc git2u libffi-devel make openssl-devel python3 python3-devel redhat-rpm-config sudo \
     && yum -y clean all
 
 # Install PIP
 RUN set -ex \
-    && curl -skL https://bootstrap.pypa.io/get-pip.py | python
+    && curl -skL https://bootstrap.pypa.io/get-pip.py | python3
 
 # Copy files
 COPY files /
@@ -43,13 +43,13 @@ COPY files /
 # Bootstrap with Ansible
 RUN set -ex \
     && cd /etc/ansible/roles/localhost \
-    && pip install --upgrade --requirement requirements.txt \
+    && pip3 install --upgrade --requirement requirements.txt \
     && molecule dependency \
     && molecule lint \
     && molecule syntax \
     && molecule converge \
     && molecule verify \
-    && yum -y clean all \
     && rm -rf /var/cache/ansible/* \
     && rm -rf /root/.cache/* \
-    && rm -rf /tmp/*
+    && rm -rf /tmp/* \
+    && yum -y clean all
