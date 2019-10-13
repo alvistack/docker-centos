@@ -20,9 +20,9 @@ This Docker container makes it easy to get an instance of SSHD up and running wi
 
 Based on [Official CentOS Docker Image](https://hub.docker.com/_/centos/) with some minor hack:
 
+  - Self initialize with Ansible, by dogfooding with Ansible Playbook
   - Handle `ENTRYPOINT` with [dumb-init](https://github.com/Yelp/dumb-init)
   - Handle `CMD` with SSHD
-  - Self initialize with Ansible, by dogfooding with Ansible Playbook
 
 ### Quick Start
 
