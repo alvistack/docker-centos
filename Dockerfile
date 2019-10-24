@@ -12,12 +12,20 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-FROM centos:7
+FROM alvistack/centos:7-slim
 
 ENV LANG   "en_US.utf8"
 ENV LC_ALL "en_US.utf8"
 ENV SHELL  "/bin/bash"
 ENV TZ     "UTC"
+
+VOLUME  "/root"
+WORKDIR "/root"
+
+EXPOSE 22
+
+ENTRYPOINT [ "dumb-init", "--", "docker-entrypoint.sh" ]
+CMD        [ "/usr/sbin/sshd", "-eD" ]
 
 # Prepare YUM dependencies
 RUN set -ex \
