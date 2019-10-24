@@ -19,14 +19,6 @@ ENV LC_ALL "en_US.utf8"
 ENV SHELL  "/bin/bash"
 ENV TZ     "UTC"
 
-VOLUME  "/root"
-WORKDIR "/root"
-
-EXPOSE 22
-
-ENTRYPOINT [ "dumb-init", "--", "docker-entrypoint.sh" ]
-CMD        [ "/usr/sbin/sshd", "-eD" ]
-
 # Prepare YUM dependencies
 RUN set -ex \
     && yum -y install epel-release https://centos7.iuscommunity.org/ius-release.rpm \
@@ -36,6 +28,10 @@ RUN set -ex \
 # Install PIP
 RUN set -ex \
     && curl -skL https://bootstrap.pypa.io/get-pip.py | python3
+
+# Purge /etc/ansible
+RUN set -ex \
+    && rm -rf /etc/ansible
 
 # Copy files
 COPY files /
