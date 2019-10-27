@@ -13,7 +13,6 @@ Learn more about CentOS: <https://www.centos.org/>
 
   - [`latest` (master/Dockerfile)](https://github.com/alvistack/docker-centos/blob/master/Dockerfile)
   - [`7` (7/Dockerfile)](https://github.com/alvistack/docker-centos/blob/7/Dockerfile)
-  - [`7-slim` (7-slim/Dockerfile)](https://github.com/alvistack/docker-centos/blob/7-slim/Dockerfile)
 
 ## Overview
 
