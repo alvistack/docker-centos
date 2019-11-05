@@ -1,10 +1,18 @@
 # Docker Image Packaging for CentOS
 
-## 7.6.1810-0alvistackx - TBC
+## 7.6.1810-XalvistackY - TBC
 
 ### Major Changes
 
+## 7.6.1810-2alvistack3 - 2019-11-05
+
+### Major Changes
+
+  - Upgrade minimal Ansible support to 2.9.0
+  - Upgrade Travis CI test as Ubuntu Bionic based
   - Default with Python 3
+  - Prepend executable if command starts with an option
+  - Improve `ENTRYPOINT` and `CMD`
 
 ## 7.6.1810-0alvistack11 - 2019-05-20
 
