@@ -15,6 +15,7 @@
 # limitations under the License.
 
 _yum:
+  - { state: "latest", name: "httpd-tools" }
   - { state: "latest", name: "mysql" }
   - { state: "latest", name: "postgresql" }
   - { state: "latest", name: "sqlite" }
