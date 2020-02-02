@@ -4,6 +4,8 @@
 
 ### Major Changes
 
+  - Replace `duplicity` with `restic`
+
 ## 7.6.1810-3alvistack1 - 2020-01-15
 
 ### Major Changes
