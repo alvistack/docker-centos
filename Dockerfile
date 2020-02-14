@@ -33,8 +33,8 @@ CMD        [ "/usr/sbin/sshd", "-eD" ]
 
 # Prepare YUM dependencies
 RUN set -ex \
-    && yum -y install epel-release https://centos7.iuscommunity.org/ius-release.rpm \
-    && yum -y install ca-certificates curl gcc git2u libffi-devel make openssl-devel python3 python3-devel redhat-lsb redhat-rpm-config sudo \
+    && yum makecache fast \
+    && yum install -y ca-certificates curl gcc iproute python3 python3-devel sudo \
     && yum -y clean all
 
 # Install PIP
