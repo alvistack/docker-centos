@@ -15,8 +15,7 @@
 # limitations under the License.
 
 - name: include default variables
-  include_vars: "../vars/main.yml"
-  tags: localhost
+  include_vars: "./vars/main.yml"
 
 - name: include release specific variables
   include_vars: "{{ lookup('first_found', _params) }}"
@@ -29,9 +28,8 @@
         - "{{ ansible_distribution | lower }}.yml"
         - "{{ ansible_os_family | lower }}.yml"
       paths:
-        - "../vars"
+        - "./vars"
   ignore_errors: true
-  tags: localhost
 
 - name: include release specific tasks
   include_tasks: "{{ lookup('first_found', _params) }}"
@@ -44,9 +42,8 @@
         - "{{ ansible_distribution | lower }}.yml"
         - "{{ ansible_os_family | lower }}.yml"
       paths:
-        - "."
+        - "./tasks"
   ignore_errors: true
-  tags: localhost
 
 - name: prepare directories
   file:
@@ -56,8 +53,9 @@
     mode: "{{ item.mode | default('0755') }}"
     state: "{{ item.state | default('directory') }}"
   loop:
+    - { dest: "/root", mode: "0700" }
+    - { dest: "/root/.ssh", mode: "0700" }
     - { dest: "/usr/local/bin" }
-  tags: localhost
 
 - name: copy templates
   template:
@@ -67,16 +65,9 @@
     group: "{{ item.group | default('root') }}"
     mode: "{{ item.mode | default('0644') }}"
   loop:
+    - { dest: "/root/.profile" }
+    - { dest: "/root/.bashrc" }
+    - { dest: "/root/.ssh/authorized_keys", mode: "0600" }
+    - { dest: "/root/.ssh/config", mode: "0600" }
+    - { dest: "/root/.bash_logout" }
     - { dest: "/usr/local/bin/docker-entrypoint.sh", mode: "0755" }
-  tags: localhost
-
-- name: prepare files
-  file:
-    dest: "{{ item.dest }}"
-    owner: "{{ item.owner | default('root') }}"
-    group: "{{ item.group | default('root') }}"
-    mode: "{{ item.mode | default('0644') }}"
-    state: "{{ item.state | default('file') }}"
-  loop:
-    - { dest: "/usr/local/bin/docker-entrypoint.sh", mode: "0755" }
-  tags: localhost

@@ -14,29 +14,4 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-- hosts: all
-  remote_user: root
-  roles:
-    - role: bootstrap
-    - role: locales
-    - role: timezone
-    - role: python
-    - role: ansible
-    - role: tini
-    - role: gosu
-
-- hosts: all
-  remote_user: root
-  roles:
-    - role: cvs
-    - role: svn
-    - role: git
-    - role: mercurial
-    - role: perforce
-    - role: openjdk
-    - role: node
-    - role: php
-    - role: rclone
-    - role: restic
-    - role: sshd
-    - role: localhost
+- import_playbook: ../../playbooks/converge.yml

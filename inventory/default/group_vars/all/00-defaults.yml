@@ -14,18 +14,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-- hosts: all
-  remote_user: root
-  become: true
-  tasks:
-    - name: prepare files
-      file:
-        dest: "{{ item.dest }}"
-        owner: "{{ item.owner | default('root') }}"
-        group: "{{ item.group | default('root') }}"
-        mode: "{{ item.mode | default('0644') }}"
-        state: "{{ item.state | default('file') }}"
-      loop:
-        - { dest: "/usr/local/bin/docker-entrypoint.sh", mode: "0755" }
-        - { dest: "/usr/local/bin/gosu", mode: "0755" }
-        - { dest: "/usr/local/bin/tini", mode: "0755" }
+openjdk_release: "8"
+node_release: "12"
+php_release: "7.3"

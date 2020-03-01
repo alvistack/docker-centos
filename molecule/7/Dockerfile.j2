@@ -12,14 +12,21 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-ansible>=2.9.0
-ansible-lint
-ansible-runner
-ansible-runner-http
-argcomplete
-docker
-molecule
-netaddr
-openshift
-python-vagrant
-yamllint
+FROM centos:7
+
+ENV LANG   "en_US.utf8"
+ENV LC_ALL "en_US.utf8"
+ENV SHELL  "/bin/bash"
+ENV TZ     "UTC"
+
+ENV OPENJDK_RELEASE "{{ openjdk_release }}"
+ENV NODE_RELEASE    "{{ node_release }}"
+ENV PHP_RELEASE     "{{ php_release }}"
+
+VOLUME  "/root"
+WORKDIR "/root"
+
+EXPOSE 22
+
+ENTRYPOINT [ "tini", "-g", "--", "docker-entrypoint.sh" ]
+CMD        [ "/usr/sbin/sshd", "-eD" ]

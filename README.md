@@ -11,8 +11,7 @@ Learn more about CentOS: <https://www.centos.org/>
 
 ## Supported Tags and Respective `Dockerfile` Links
 
-  - [`latest` (master/Dockerfile)](https://github.com/alvistack/docker-centos/blob/master/Dockerfile)
-  - [`7` (7/Dockerfile)](https://github.com/alvistack/docker-centos/blob/7/Dockerfile)
+  - [`7`, `latest` (molecule/7/Dockerfile.j2)](https://github.com/alvistack/docker-centos/blob/master/molecule/7/Dockerfile.j2)
 
 ## Overview
 
@@ -20,7 +19,8 @@ This Docker container makes it easy to get an instance of SSHD up and running wi
 
 Based on [Official CentOS Docker Image](https://hub.docker.com/_/centos/) with some minor hack:
 
-  - Self initialize with Ansible, by dogfooding with Ansible Playbook
+  - Minimized `Dockerfile` for meta data definition
+  - Provision by Ansible and Molecule Docker driver in single layer
   - Handle `ENTRYPOINT` with [tini](https://github.com/krallin/tini)
   - Handle `CMD` with SSHD
 
