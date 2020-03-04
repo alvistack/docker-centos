@@ -1,10 +1,15 @@
 # Docker Image Packaging for CentOS
 
-## 7.6.1810-XalvistackY - TBC
+## 7.7.1908-XalvistackY - TBC
+
+### Major Changes
+
+## 7.7.1908-4alvistack1 - 2020-03-04
 
 ### Major Changes
 
   - Revamp with Molecule and `docker commit`
+  - Hotfix for systemd
   - Replace `duplicity` with `restic`
 
 ## 7.6.1810-3alvistack1 - 2020-01-15
