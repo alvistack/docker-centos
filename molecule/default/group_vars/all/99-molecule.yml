@@ -13,22 +13,3 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
-namespace: alvistack
-name: docker-centos
-description: Docker Image Packaging for CentOS
-
-version: VERSION
-readme: README.md
-license: Apache-2.0
-
-repository: https://github.com/alvistack/docker-centos
-documentation: https://github.com/alvistack/docker-centos
-homepage: https://github.com/alvistack/docker-centos
-issues: https://github.com/alvistack/docker-centos/issues
-
-dependencies: {}
-tags:
-  - system
-authors:
-  - Wong Hoi Sing Edison <hswong3i@pantarei-design.com>
