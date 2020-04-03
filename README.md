@@ -1,6 +1,6 @@
 # Docker Image Packaging for CentOS
 
-[![Travis](https://img.shields.io/travis/alvistack/docker-centos.svg)](https://travis-ci.org/alvistack/docker-centos)
+[![Travis](https://img.shields.io/travis/com/alvistack/docker-centos.svg)](https://travis-ci.com/alvistack/docker-centos)
 [![GitHub release](https://img.shields.io/github/release/alvistack/docker-centos.svg)](https://github.com/alvistack/docker-centos/releases)
 [![GitHub license](https://img.shields.io/github/license/alvistack/docker-centos.svg)](https://github.com/alvistack/docker-centos/blob/master/LICENSE)
 [![Docker Pulls](https://img.shields.io/docker/pulls/alvistack/centos.svg)](https://hub.docker.com/r/alvistack/centos/)
@@ -65,7 +65,7 @@ The `latest` tag matches the most recent [GitHub Release](https://github.com/alv
 
 ### `alvistack/centos:<version>`
 
-The version tags are rolling release rebuild by [Travis](https://travis-ci.org/alvistack/docker-centos) in weekly basis. Thus using these tags will ensure you are running the latest packages provided by the base image project.
+The version tags are rolling release rebuild by [Travis](https://travis-ci.com/alvistack/docker-centos) in weekly basis. Thus using these tags will ensure you are running the latest packages provided by the base image project.
 
 ## License
 
