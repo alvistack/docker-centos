@@ -21,7 +21,7 @@ ENV TZ     "UTC"
 
 # Hotfix for systemd
 RUN set -ex \
-    && yum makecache fast \
+    && yum makecache \
     && yum install -y systemd \
     && find /lib/systemd/system/sysinit.target.wants/ -name "systemd-tmpfiles-setup.service" -delete \
     && rm -f /lib/systemd/system/multi-user.target.wants/* \
