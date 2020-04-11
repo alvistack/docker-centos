@@ -4,6 +4,8 @@
 
 ### Major Changes
 
+  - Add CentOS 8 support
+
 ## 7.7.1908-4alvistack4 - 2020-03-05
 
 ### Major Changes
