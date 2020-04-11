@@ -4,10 +4,11 @@
 
 ### Major Changes
 
-## 7.7.1908-4alvistack8 - 2020-04-11
+## 7.7.1908-4alvistack9 - 2020-04-11
 
 ### Major Changes
 
+  - Provision with systemd support
   - Add CentOS 8 support
 
 ## 7.7.1908-4alvistack4 - 2020-03-05
