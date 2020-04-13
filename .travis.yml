@@ -11,6 +11,10 @@ env:
     - MOLECULE_SCENARIO_NAME="8"
     - MOLECULE_SCENARIO_NAME="7"
 
+jobs:
+  allow_failures:
+    - env: MOLECULE_SCENARIO_NAME="8"
+
 before_install:
   - |
     sudo apt-get -y purge python3-openssl && sudo apt-get -y autoremove
