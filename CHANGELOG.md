@@ -4,11 +4,7 @@
 
 ### Major Changes
 
-## 7.7.1908-4alvistack9 - 2020-04-11
-
-### Major Changes
-
-  - Provision with systemd support
+  - Rename `post_tasks.yml` as `side_effect.yml`
   - Add CentOS 8 support
 
 ## 7.7.1908-4alvistack4 - 2020-03-05
