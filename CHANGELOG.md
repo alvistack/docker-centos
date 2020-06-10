@@ -1,9 +1,10 @@
 # Docker Image Packaging for CentOS
 
-## 7.7.1908-XalvistackY - TBC
+## 8.1.1911-XalvistackY - TBC
 
 ### Major Changes
 
+  - Revamp `create`, `side_effect`, `verify` and `destroy` logic
   - Replace `tini` with `catatonit`
   - Rename `post_tasks.yml` as `side_effect.yml`
   - Add CentOS 8 support
