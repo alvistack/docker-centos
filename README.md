@@ -11,8 +11,8 @@ Learn more about CentOS: <https://www.centos.org/>
 
 ## Supported Tags and Respective `Dockerfile` Links
 
-  - [`8`](https://github.com/alvistack/docker-centos/blob/master/molecule/8/Dockerfile.j2)
-  - [`7`, `latest`](https://github.com/alvistack/docker-centos/blob/master/molecule/7/Dockerfile.j2)
+  - [`8`, `latest`](https://github.com/alvistack/docker-centos/blob/master/molecule/8/Dockerfile.j2)
+  - [`7`](https://github.com/alvistack/docker-centos/blob/master/molecule/7/Dockerfile.j2)
 
 ## Overview
 
@@ -22,7 +22,7 @@ Based on [Official CentOS Docker Image](https://hub.docker.com/_/centos/) with s
 
   - Minimized `Dockerfile` for meta data definition
   - Provision by Ansible and Molecule Docker driver in single layer
-  - Handle `ENTRYPOINT` with [tini](https://github.com/krallin/tini)
+  - Handle `ENTRYPOINT` with [catatonit](https://github.com/openSUSE/catatonit)
   - Handle `CMD` with SSHD
 
 ### Quick Start
