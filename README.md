@@ -11,8 +11,8 @@ Learn more about CentOS: <https://www.centos.org/>
 
 ## Supported Tags and Respective `Dockerfile` Links
 
-  - [`8`](https://github.com/alvistack/docker-centos/blob/master/molecule/8/Dockerfile.j2)
-  - [`7`, `latest`](https://github.com/alvistack/docker-centos/blob/master/molecule/7/Dockerfile.j2)
+  - [`8`, `latest`](https://github.com/alvistack/docker-centos/blob/master/molecule/8/Dockerfile.j2)
+  - [`7`](https://github.com/alvistack/docker-centos/blob/master/molecule/7/Dockerfile.j2)
 
 ## Overview
 
