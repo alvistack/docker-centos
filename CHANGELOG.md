@@ -1,6 +1,10 @@
 # Docker Image Packaging for CentOS
 
-## 8.1.1911-XalvistackY - TBC
+## 8.2.2004-XalvistackY - TBC
+
+### Major Changes
+
+## 8.2.2004-4alvistack1 - 2020-08-26
 
 ### Major Changes
 
