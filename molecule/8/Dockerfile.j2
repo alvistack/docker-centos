@@ -14,8 +14,15 @@
 
 FROM centos:8
 
-ENV LANG   "en_US.utf8"
-ENV LC_ALL "en_US.utf8"
+# Hotfix for en_US.UTF-8 locale
+RUN set -ex \
+    && yum makecache \
+    && yum install -y glibc-common glibc-langpack-en glibc-locale-source \
+    && localedef -i en_US -c -f UTF-8 en_US.UTF-8 \
+    && yum -y clean all
+
+ENV LANG   "en_US.UTF-8"
+ENV LC_ALL "en_US.UTF-8"
 ENV SHELL  "/bin/bash"
 ENV TZ     "UTC"
 
@@ -23,13 +30,13 @@ ENV TZ     "UTC"
 RUN set -ex \
     && yum makecache \
     && yum install -y systemd \
-    && find /lib/systemd/system/sysinit.target.wants/ -name "systemd-tmpfiles-setup.service" -delete \
-    && rm -f /lib/systemd/system/multi-user.target.wants/* \
     && rm -f /etc/systemd/system/*.wants/* \
-    && rm -f /lib/systemd/system/local-fs.target.wants/* \
-    && rm -f /lib/systemd/system/sockets.target.wants/*udev* \
-    && rm -f /lib/systemd/system/sockets.target.wants/*initctl* \
     && rm -f /lib/systemd/system/basic.target.wants/* \
+    && rm -f /lib/systemd/system/local-fs.target.wants/* \
+    && rm -f /lib/systemd/system/multi-user.target.wants/* \
+    && rm -f /lib/systemd/system/sockets.target.wants/*initctl* \
+    && rm -f /lib/systemd/system/sockets.target.wants/*udev* \
+    && rm -f /lib/systemd/system/sysinit.target.wants/systemd-tmpfiles-setup.service \
     && yum -y clean all
 
 ENV OPENJDK_RELEASE "{{ openjdk_release }}"
