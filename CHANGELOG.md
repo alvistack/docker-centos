@@ -4,8 +4,7 @@
 
 ### Major Changes
 
-  - Add Node.js 15 support
-  - Remove Node.js 14 support
+  - Revamp with Packer
 
 ## 8.2.2004-4alvistack6 - 2020-10-14
 
