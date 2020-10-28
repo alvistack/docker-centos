@@ -9,7 +9,7 @@ CentOS Linux is a community-supported distribution derived from sources freely p
 
 Learn more about CentOS: <https://www.centos.org/>
 
-## Supported Tags and Respective `Dockerfile` Links
+## Supported Tags and Respective Packer Template Links
 
   - [`8`, `latest`](https://github.com/alvistack/docker-centos/blob/master/packer/8/packer.json)
   - [`7`](https://github.com/alvistack/docker-centos/blob/master/packer/7/packer.json)
