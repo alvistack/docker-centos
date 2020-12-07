@@ -11,8 +11,8 @@ Learn more about CentOS: <https://www.centos.org/>
 
 ## Supported Tags and Respective Packer Template Links
 
-  - [`8`, `latest`](https://github.com/alvistack/docker-centos/blob/master/packer/8/packer.json)
-  - [`7`](https://github.com/alvistack/docker-centos/blob/master/packer/7/packer.json)
+  - [`8`, `latest`](https://github.com/alvistack/docker-centos/blob/master/packer/docker-8/packer.json)
+  - [`7`](https://github.com/alvistack/docker-centos/blob/master/packer/docker-7/packer.json)
 
 ## Overview
 
