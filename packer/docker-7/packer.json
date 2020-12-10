@@ -20,6 +20,7 @@
   "provisioners": [
     {
       "inline": [
+        "set -eu",
         "yum makecache",
         "yum update -y",
         "yum install -y ca-certificates curl gcc iproute python3 python3-devel sudo"
