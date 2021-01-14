@@ -1,9 +1,9 @@
 # Docker Image Packaging for CentOS
 
-[![Gitlab pipeline status](https://img.shields.io/gitlab/pipeline/alvistack/docker-centos/master)](https://gitlab.com/alvistack/docker-centos/-/pipelines)
+[![GitLab pipeline status](https://img.shields.io/gitlab/pipeline/alvistack/docker-centos/master)](https://gitlab.com/alvistack/docker-centos/-/pipelines)
 [![GitHub release](https://img.shields.io/github/release/alvistack/docker-centos.svg)](https://github.com/alvistack/docker-centos/releases)
 [![GitHub license](https://img.shields.io/github/license/alvistack/docker-centos.svg)](https://github.com/alvistack/docker-centos/blob/master/LICENSE)
-[![Docker Pulls](https://img.shields.io/docker/pulls/alvistack/centos.svg)](https://hub.docker.com/r/alvistack/centos/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/alvistack/centos-8.svg)](https://hub.docker.com/r/alvistack/centos-8)
 
 CentOS Linux is a community-supported distribution derived from sources freely provided to the public by Red Hat for Red Hat Enterprise Linux (RHEL).
 
@@ -11,8 +11,10 @@ Learn more about CentOS: <https://www.centos.org/>
 
 ## Supported Tags and Respective Packer Template Links
 
-  - [`8`, `latest`](https://github.com/alvistack/docker-centos/blob/master/packer/docker-8/packer.json)
-  - [`7`](https://github.com/alvistack/docker-centos/blob/master/packer/docker-7/packer.json)
+  - [`alvistack/centos-8`](https://hub.docker.com/r/alvistack/centos-8)
+      - [`packer/docker-8/packer.json`](https://github.com/alvistack/docker-centos/blob/master/packer/docker-8/packer.json)
+  - [`alvistack/centos-7`](https://hub.docker.com/r/alvistack/centos-7)
+      - [`packer/docker-7/packer.json`](https://github.com/alvistack/docker-centos/blob/master/packer/docker-7/packer.json)
 
 ## Overview
 
@@ -59,13 +61,13 @@ Now you could SSH to it as normal:
 
 ## Versioning
 
-### `alvistack/centos:latest`
+### `YYYYMMDD.Y.Z`
 
-The `latest` tag matches the most recent [GitHub Release](https://github.com/alvistack/docker-centos/releases) of this repository. Thus using `alvistack/centos:latest` or `alvistack/centos` will ensure you are running the most up to date stable version of this image.
+Release tags could be find from [GitHub Release](https://github.com/alvistack/docker-centos/releases) of this repository. Thus using these tags will ensure you are running the most up to date stable version of this image.
 
-### `alvistack/centos:<version>`
+### `YYYYMMDD.0.0`
 
-The version tags are rolling release rebuild by [Travis](https://travis-ci.com/alvistack/docker-centos) in weekly basis. Thus using these tags will ensure you are running the latest packages provided by the base image project.
+Version tags ended with `.0.0` are rolling release rebuild by [GitLab pipeline](https://gitlab.com/alvistack/docker-centos/-/pipelines) in weekly basis. Thus using these tags will ensure you are running the latest packages provided by the base image project.
 
 ## License
 
