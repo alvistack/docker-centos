@@ -19,19 +19,21 @@
   become: true
   gather_facts: false
   tasks:
-    - name: rm -rf /root/.ansible/tmp/*
+    - name: find /var/cache/ansible/* -type f -a -not -name '*.log' -exec rm {} \;
       raw: |
         set -eu
-        rm -rf /root/.ansible/tmp/*
+        find /var/cache/ansible/* -type f -a -not -name '*.log' -exec rm {} \;
         rm -rf /root/.cache/*
         rm -rf /tmp/*
       changed_when: false
       ignore_errors: true
 
-    - name: yum clean all
+    - name: apt-get -y clean
       raw: |
         set -eu
-        yum clean all
-        rm -rf /var/cache/yum/*
+        apt-get -y autoremove
+        apt-get -y autoclean
+        apt-get -y clean
+        rm -rf /var/lib/apt/lists/*
       changed_when: false
       ignore_errors: true
