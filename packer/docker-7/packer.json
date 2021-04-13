@@ -13,7 +13,7 @@
         "CMD [\"/usr/sbin/sshd\", \"-eD\"]"
       ],
       "commit": true,
-      "image": "centos:7",
+      "image": "quay.io/centos/centos:centos7",
       "type": "docker"
     }
   ],

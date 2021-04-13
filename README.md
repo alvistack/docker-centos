@@ -3,16 +3,16 @@
 [![GitLab pipeline status](https://img.shields.io/gitlab/pipeline/alvistack/docker-centos/master)](https://gitlab.com/alvistack/docker-centos/-/pipelines)
 [![GitHub release](https://img.shields.io/github/release/alvistack/docker-centos.svg)](https://github.com/alvistack/docker-centos/releases)
 [![GitHub license](https://img.shields.io/github/license/alvistack/docker-centos.svg)](https://github.com/alvistack/docker-centos/blob/master/LICENSE)
-[![Docker Pulls](https://img.shields.io/docker/pulls/alvistack/centos-8.svg)](https://hub.docker.com/r/alvistack/centos-8)
+[![Docker Pulls](https://img.shields.io/docker/pulls/alvistack/centos-8-stream.svg)](https://hub.docker.com/r/alvistack/centos-8-stream)
 
-CentOS Linux is a community-supported distribution derived from sources freely provided to the public by Red Hat for Red Hat Enterprise Linux (RHEL).
+CentOS (from Community Enterprise Operating System) was a Linux distribution that provided a free, community-supported computing platform functionally compatible with its upstream source, Red Hat Enterprise Linux (RHEL). In January 2014, CentOS announced the official joining with Red Hat while staying independent from RHEL, under a new CentOS governing board.
 
-Learn more about CentOS: <https://www.centos.org/>
+Learn more about CentOS: <https://centos.org/>
 
 ## Supported Tags and Respective Packer Template Links
 
-  - [`alvistack/centos-8`](https://hub.docker.com/r/alvistack/centos-8)
-      - [`packer/docker-8/packer.json`](https://github.com/alvistack/docker-centos/blob/master/packer/docker-8/packer.json)
+  - [`alvistack/centos-8-stream`](https://hub.docker.com/r/alvistack/centos-8-stream)
+      - [`packer/docker-8-stream/packer.json`](https://github.com/alvistack/docker-centos/blob/master/packer/docker-8-stream/packer.json)
   - [`alvistack/centos-7`](https://hub.docker.com/r/alvistack/centos-7)
       - [`packer/docker-7/packer.json`](https://github.com/alvistack/docker-centos/blob/master/packer/docker-7/packer.json)
 
@@ -31,14 +31,14 @@ Based on [Official CentOS Docker Image](https://hub.docker.com/_/centos/) with s
 Start SSHD:
 
     # Pull latest image
-    docker pull alvistack/centos
+    docker pull alvistack/centos-8-stream
     
     # Run as detach
     docker run \
         -itd \
         --name centos \
         --publish 2222:22 \
-        alvistack/centos
+        alvistack/centos-8-stream
 
 **Success**. SSHD is now available on port `2222`.
 

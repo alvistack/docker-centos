@@ -4,6 +4,10 @@
 
 ### Major Changes
 
+  - Sync structure with `alvistack/vagrant-centos`
+  - Support CentOS 8 Stream
+  - Remove CentOS 8 support
+
 ## 20210313.1.1 - 2021-03-13
 
 ### Major Changes
