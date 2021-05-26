@@ -4,6 +4,7 @@
 
 ### Major Changes
 
+  - Upgrade minimal Ansible support to 4.0.0
   - Sync structure with `alvistack/vagrant-centos`
   - Support CentOS 8 Stream
   - Remove CentOS 8 support
