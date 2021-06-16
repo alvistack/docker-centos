@@ -4,7 +4,9 @@
 [![GitHub release](https://img.shields.io/github/release/alvistack/docker-centos.svg)](https://github.com/alvistack/docker-centos/releases)
 [![GitHub license](https://img.shields.io/github/license/alvistack/docker-centos.svg)](https://github.com/alvistack/docker-centos/blob/master/LICENSE)
 [![Docker Pulls](https://img.shields.io/docker/pulls/alvistack/centos-8-stream.svg)](https://hub.docker.com/r/alvistack/centos-8-stream)
+
 CentOS (from Community Enterprise Operating System) was a Linux distribution that provided a free, community-supported computing platform functionally compatible with its upstream source, Red Hat Enterprise Linux (RHEL). In January 2014, CentOS announced the official joining with Red Hat while staying independent from RHEL, under a new CentOS governing board.
+
 Learn more about CentOS: <https://centos.org/>
 
 ## Supported Tags and Respective Packer Template Links
@@ -17,6 +19,7 @@ Learn more about CentOS: <https://centos.org/>
 ## Overview
 
 This Docker container makes it easy to get an instance of SSHD up and running with CentOS.
+
 Based on [Official CentOS Docker Image](https://hub.docker.com/_/centos/) with some minor hack:
 
   - Packaging by Packer Docker builder and Ansible provisioner in single layer
@@ -26,25 +29,35 @@ Based on [Official CentOS Docker Image](https://hub.docker.com/_/centos/) with s
 ### Quick Start
 
 Start SSHD:
-\# Pull latest image
-docker pull alvistack/centos-8-stream
-\# Run as detach
-docker run   
-\-itd   
-\--name centos   
-\--publish 2222:22   
-alvistack/centos-8-stream
+
+    # Pull latest image
+    docker pull alvistack/centos-8-stream
+    
+    # Run as detach
+    docker run \
+        -itd \
+        --name centos \
+        --publish 2222:22 \
+        alvistack/centos-8-stream
+
 **Success**. SSHD is now available on port `2222`.
+
 Because this container **DIDN'T** handle the generation of root password, so you should set it up manually with `pwgen` by:
-\# Generate password with pwgen
-PASSWORD=$(docker exec -i centos pwgen -cnyB1); echo $PASSWORD
-\# Inject the generated password
-echo "root:$PASSWORD" | docker exec -i centos chpasswd
+
+    # Generate password with pwgen
+    PASSWORD=$(docker exec -i centos pwgen -cnyB1); echo $PASSWORD
+    
+    # Inject the generated password
+    echo "root:$PASSWORD" | docker exec -i centos chpasswd
+
 Alternatively, you could inject your own SSH public key into container's authorized\_keys by:
-\# Inject your own SSH public key
-(docker exec -i centos sh -c "cat \>\> /root/.ssh/authorized\_keys") \< \~/.ssh/id\_rsa.pub
+
+    # Inject your own SSH public key
+    (docker exec -i centos sh -c "cat >> /root/.ssh/authorized_keys") < ~/.ssh/id_rsa.pub
+
 Now you could SSH to it as normal:
-ssh root@localhost -p 2222
+
+    ssh root@localhost -p 2222
 
 ## Versioning
 
