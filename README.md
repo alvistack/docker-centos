@@ -13,6 +13,8 @@ Learn more about CentOS: <https://centos.org/>
 
 ## Supported Tags and Respective Packer Template Links
 
+  - [`alvistack/centos-9-stream`](https://hub.docker.com/r/alvistack/centos-9-stream)
+      - [`packer/docker-9-stream/packer.json`](https://github.com/alvistack/docker-centos/blob/master/packer/docker-9-stream/packer.json)
   - [`alvistack/centos-8-stream`](https://hub.docker.com/r/alvistack/centos-8-stream)
       - [`packer/docker-8-stream/packer.json`](https://github.com/alvistack/docker-centos/blob/master/packer/docker-8-stream/packer.json)
   - [`alvistack/centos-7`](https://hub.docker.com/r/alvistack/centos-7)

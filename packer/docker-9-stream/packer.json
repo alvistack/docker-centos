@@ -13,7 +13,7 @@
         "CMD [\"/usr/sbin/sshd\", \"-eD\"]"
       ],
       "commit": true,
-      "image": "quay.io/centos/centos:stream8",
+      "image": "quay.io/centos/centos:stream9",
       "privileged": true,
       "type": "docker"
     }
@@ -35,7 +35,7 @@
         "set -eu",
         "yum makecache",
         "yum update -y",
-        "yum install -y ca-certificates curl gcc glibc-common glibc-langpack-en iproute python3 sudo yum-utils"
+        "yum install -y --allowerasing ca-certificates curl gcc glibc-common glibc-langpack-en iproute python3 sudo yum-utils"
       ],
       "type": "shell"
     },
