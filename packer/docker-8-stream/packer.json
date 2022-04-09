@@ -2,10 +2,10 @@
   "builders": [
     {
       "changes": [
-        "ENV LANG en_US.UTF-8",
-        "ENV LC_ALL en_US.UTF-8",
-        "ENV SHELL /bin/bash",
-        "ENV TZ UTC",
+        "ENV LANG=en_US.UTF-8",
+        "ENV LC_ALL=en_US.UTF-8",
+        "ENV SHELL=/bin/bash",
+        "ENV TZ=UTC",
         "VOLUME /root",
         "WORKDIR /root",
         "EXPOSE 22",
@@ -35,7 +35,7 @@
         "set -eu",
         "yum makecache",
         "yum update -y",
-        "yum install -y ca-certificates curl gcc glibc-common glibc-langpack-en iproute python3 sudo yum-utils"
+        "yum install -y ca-certificates curl gcc glibc-common glibc-langpack-en hostname iproute python3 sudo yum-utils"
       ],
       "type": "shell"
     },
