@@ -18,9 +18,10 @@ namespace: alvistack
 name: docker-centos
 description: Docker Image Packaging for CentOS
 
-version: VERSION
+version: 0.0.0
 readme: README.md
-license: Apache-2.0
+license:
+  - Apache-2.0
 
 repository: https://github.com/alvistack/docker-centos
 documentation: https://github.com/alvistack/docker-centos
