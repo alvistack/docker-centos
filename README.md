@@ -1,6 +1,6 @@
 # Docker Image Packaging for CentOS
 
-<img src="/alvistack.svg" width="75" alt="AlviStack">
+<a href="https://alvistack.com" title="AlviStack" target="_blank"><img src="/alvistack.svg" height="75" alt="AlviStack"></a>
 
 [![GitLab pipeline status](https://img.shields.io/gitlab/pipeline/alvistack/docker-centos/master)](https://gitlab.com/alvistack/docker-centos/-/pipelines)
 [![GitHub tag](https://img.shields.io/github/tag/alvistack/docker-centos.svg)](https://github.com/alvistack/docker-centos/tags)
