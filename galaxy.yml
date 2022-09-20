@@ -15,7 +15,7 @@
 # limitations under the License.
 
 namespace: alvistack
-name: docker-centos
+name: centos
 description: Docker Image Packaging for CentOS
 
 version: 0.0.0
