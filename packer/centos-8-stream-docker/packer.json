@@ -68,6 +68,7 @@
       "playbook_file": "./packer.yml",
       "type": "ansible",
       "user": "root"
+    },
     {
       "inline": [
         "set -eu",
