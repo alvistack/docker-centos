@@ -13,12 +13,12 @@ Learn more about CentOS: <https://centos.org/>
 
 ## Supported Tags and Respective Packer Template Links
 
-  - [`alvistack/centos-9-stream`](https://hub.docker.com/r/alvistack/centos-9-stream)
-      - [`packer/docker-9-stream/packer.json`](https://github.com/alvistack/docker-centos/blob/master/packer/docker-9-stream/packer.json)
-  - [`alvistack/centos-8-stream`](https://hub.docker.com/r/alvistack/centos-8-stream)
-      - [`packer/docker-8-stream/packer.json`](https://github.com/alvistack/docker-centos/blob/master/packer/docker-8-stream/packer.json)
-  - [`alvistack/centos-7`](https://hub.docker.com/r/alvistack/centos-7)
-      - [`packer/docker-7/packer.json`](https://github.com/alvistack/docker-centos/blob/master/packer/docker-7/packer.json)
+-   [`alvistack/centos-9-stream`](https://hub.docker.com/r/alvistack/centos-9-stream)
+    -   [`packer/docker-9-stream/packer.json`](https://github.com/alvistack/docker-centos/blob/master/packer/docker-9-stream/packer.json)
+-   [`alvistack/centos-8-stream`](https://hub.docker.com/r/alvistack/centos-8-stream)
+    -   [`packer/docker-8-stream/packer.json`](https://github.com/alvistack/docker-centos/blob/master/packer/docker-8-stream/packer.json)
+-   [`alvistack/centos-7`](https://hub.docker.com/r/alvistack/centos-7)
+    -   [`packer/docker-7/packer.json`](https://github.com/alvistack/docker-centos/blob/master/packer/docker-7/packer.json)
 
 ## Overview
 
@@ -26,9 +26,9 @@ This Docker container makes it easy to get an instance of SSHD up and running wi
 
 Based on [Official CentOS Docker Image](https://hub.docker.com/_/centos/) with some minor hack:
 
-  - Packaging by Packer Docker builder and Ansible provisioner in single layer
-  - Handle `ENTRYPOINT` with [catatonit](https://github.com/openSUSE/catatonit)
-  - Handle `CMD` with SSHD
+-   Packaging by Packer Docker builder and Ansible provisioner in single layer
+-   Handle `ENTRYPOINT` with [catatonit](https://github.com/openSUSE/catatonit)
+-   Handle `CMD` with SSHD
 
 ### Quick Start
 
@@ -36,7 +36,7 @@ Start SSHD:
 
     # Pull latest image
     docker pull alvistack/centos-8-stream
-    
+
     # Run as detach
     docker run \
         -itd \
@@ -50,11 +50,11 @@ Because this container **DIDN'T** handle the generation of root password, so you
 
     # Generate password with pwgen
     PASSWORD=$(docker exec -i centos pwgen -cnyB1); echo $PASSWORD
-    
+
     # Inject the generated password
     echo "root:$PASSWORD" | docker exec -i centos chpasswd
 
-Alternatively, you could inject your own SSH public key into container's authorized\_keys by:
+Alternatively, you could inject your own SSH public key into container's authorized_keys by:
 
     # Inject your own SSH public key
     (docker exec -i centos sh -c "cat >> /root/.ssh/authorized_keys") < ~/.ssh/id_rsa.pub
@@ -75,11 +75,11 @@ Version tags ended with `.0.0` are rolling release rebuild by [GitLab pipeline](
 
 ## License
 
-  - Code released under [Apache License 2.0](LICENSE)
-  - Docs released under [CC BY 4.0](http://creativecommons.org/licenses/by/4.0/)
+-   Code released under [Apache License 2.0](LICENSE)
+-   Docs released under [CC BY 4.0](http://creativecommons.org/licenses/by/4.0/)
 
 ## Author Information
 
-  - Wong Hoi Sing Edison
-      - <https://twitter.com/hswong3i>
-      - <https://github.com/hswong3i>
+-   Wong Hoi Sing Edison
+    -   <https://twitter.com/hswong3i>
+    -   <https://github.com/hswong3i>
