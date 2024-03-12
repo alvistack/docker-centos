@@ -138,24 +138,24 @@ build:centos-9-stream-docker:
   <<: *job-packer-build
   stage: build
   cache:
-    key: "$CI_PIPELINE_ID-centos-9-stream-docker"
+    key: $CI_PIPELINE_ID-centos-9-stream-docker
     paths:
       - packer/*/output-docker
   variables:
-    _IMAGE: "centos-9-stream"
-    _PROVIDER: "docker"
+    _IMAGE: centos-9-stream
+    _PROVIDER: docker
 
 test:centos-9-stream-docker:
   <<: *job-molecule-test
   stage: test
   cache:
-    key: "$CI_PIPELINE_ID-centos-9-stream-docker"
+    key: $CI_PIPELINE_ID-centos-9-stream-docker
     paths:
       - packer/*/output-docker
     policy: pull
   variables:
-    _IMAGE: "centos-9-stream"
-    _PROVIDER: "docker"
+    _IMAGE: centos-9-stream
+    _PROVIDER: docker
   needs:
     - build:centos-9-stream-docker
 
@@ -163,13 +163,13 @@ deploy:centos-9-stream-docker:
   <<: *job-docker-push
   stage: deploy
   cache:
-    key: "$CI_PIPELINE_ID-centos-9-stream-docker"
+    key: $CI_PIPELINE_ID-centos-9-stream-docker
     paths:
       - packer/*/output-docker
     policy: pull
   variables:
-    _IMAGE: "centos-9-stream"
-    _PROVIDER: "docker"
+    _IMAGE: centos-9-stream
+    _PROVIDER: docker
   needs:
     - test:centos-9-stream-docker
 
@@ -177,24 +177,24 @@ build:centos-8-stream-docker:
   <<: *job-packer-build
   stage: build
   cache:
-    key: "$CI_PIPELINE_ID-centos-8-stream-docker"
+    key: $CI_PIPELINE_ID-centos-8-stream-docker
     paths:
       - packer/*/output-docker
   variables:
-    _IMAGE: "centos-8-stream"
-    _PROVIDER: "docker"
+    _IMAGE: centos-8-stream
+    _PROVIDER: docker
 
 test:centos-8-stream-docker:
   <<: *job-molecule-test
   stage: test
   cache:
-    key: "$CI_PIPELINE_ID-centos-8-stream-docker"
+    key: $CI_PIPELINE_ID-centos-8-stream-docker
     paths:
       - packer/*/output-docker
     policy: pull
   variables:
-    _IMAGE: "centos-8-stream"
-    _PROVIDER: "docker"
+    _IMAGE: centos-8-stream
+    _PROVIDER: docker
   needs:
     - build:centos-8-stream-docker
 
@@ -202,13 +202,13 @@ deploy:centos-8-stream-docker:
   <<: *job-docker-push
   stage: deploy
   cache:
-    key: "$CI_PIPELINE_ID-centos-8-stream-docker"
+    key: $CI_PIPELINE_ID-centos-8-stream-docker
     paths:
       - packer/*/output-docker
     policy: pull
   variables:
-    _IMAGE: "centos-8-stream"
-    _PROVIDER: "docker"
+    _IMAGE: centos-8-stream
+    _PROVIDER: docker
   needs:
     - test:centos-8-stream-docker
 
@@ -216,24 +216,24 @@ build:centos-7-docker:
   <<: *job-packer-build
   stage: build
   cache:
-    key: "$CI_PIPELINE_ID-centos-7-docker"
+    key: $CI_PIPELINE_ID-centos-7-docker
     paths:
       - packer/*/output-docker
   variables:
-    _IMAGE: "centos-7"
-    _PROVIDER: "docker"
+    _IMAGE: centos-7
+    _PROVIDER: docker
 
 test:centos-7-docker:
   <<: *job-molecule-test
   stage: test
   cache:
-    key: "$CI_PIPELINE_ID-centos-7-docker"
+    key: $CI_PIPELINE_ID-centos-7-docker
     paths:
       - packer/*/output-docker
     policy: pull
   variables:
-    _IMAGE: "centos-7"
-    _PROVIDER: "docker"
+    _IMAGE: centos-7
+    _PROVIDER: docker
   needs:
     - build:centos-7-docker
 
@@ -241,12 +241,12 @@ deploy:centos-7-docker:
   <<: *job-docker-push
   stage: deploy
   cache:
-    key: "$CI_PIPELINE_ID-centos-7-docker"
+    key: $CI_PIPELINE_ID-centos-7-docker
     paths:
       - packer/*/output-docker
     policy: pull
   variables:
-    _IMAGE: "centos-7"
-    _PROVIDER: "docker"
+    _IMAGE: centos-7
+    _PROVIDER: docker
   needs:
     - test:centos-7-docker
