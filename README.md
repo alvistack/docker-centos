@@ -22,12 +22,12 @@ Learn more about CentOS: <https://centos.org/>
 
 ## Supported Tags and Respective Packer Template Links
 
--   [`alvistack/centos-9-stream`](https://hub.docker.com/r/alvistack/centos-9-stream)
-    -   [`packer/docker-9-stream/packer.json`](https://github.com/alvistack/docker-centos/blob/master/packer/docker-9-stream/packer.json)
--   [`alvistack/centos-8-stream`](https://hub.docker.com/r/alvistack/centos-8-stream)
-    -   [`packer/docker-8-stream/packer.json`](https://github.com/alvistack/docker-centos/blob/master/packer/docker-8-stream/packer.json)
--   [`alvistack/centos-7`](https://hub.docker.com/r/alvistack/centos-7)
-    -   [`packer/docker-7/packer.json`](https://github.com/alvistack/docker-centos/blob/master/packer/docker-7/packer.json)
+- [`alvistack/centos-9-stream`](https://hub.docker.com/r/alvistack/centos-9-stream)
+  - [`packer/docker-9-stream/packer.json`](https://github.com/alvistack/docker-centos/blob/master/packer/docker-9-stream/packer.json)
+- [`alvistack/centos-8-stream`](https://hub.docker.com/r/alvistack/centos-8-stream)
+  - [`packer/docker-8-stream/packer.json`](https://github.com/alvistack/docker-centos/blob/master/packer/docker-8-stream/packer.json)
+- [`alvistack/centos-7`](https://hub.docker.com/r/alvistack/centos-7)
+  - [`packer/docker-7/packer.json`](https://github.com/alvistack/docker-centos/blob/master/packer/docker-7/packer.json)
 
 ## Overview
 
@@ -37,11 +37,11 @@ running with CentOS.
 Based on [Official CentOS Docker
 Image](https://hub.docker.com/_/centos/) with some minor hack:
 
--   Packaging by Packer Docker builder and Ansible provisioner in single
-    layer
--   Handle `ENTRYPOINT` with
-    [catatonit](https://github.com/openSUSE/catatonit)
--   Handle `CMD` with SSHD
+- Packaging by Packer Docker builder and Ansible provisioner in single
+  layer
+- Handle `ENTRYPOINT` with
+  [catatonit](https://github.com/openSUSE/catatonit)
+- Handle `CMD` with SSHD
 
 ### Quick Start
 
@@ -96,12 +96,12 @@ latest packages provided by the base image project.
 
 ## License
 
--   Code released under [Apache License 2.0](LICENSE)
--   Docs released under [CC BY
-    4.0](http://creativecommons.org/licenses/by/4.0/)
+- Code released under [Apache License 2.0](LICENSE)
+- Docs released under [CC BY
+  4.0](http://creativecommons.org/licenses/by/4.0/)
 
 ## Author Information
 
--   Wong Hoi Sing Edison
-    -   <https://twitter.com/hswong3i>
-    -   <https://github.com/hswong3i>
+- Wong Hoi Sing Edison
+  - <https://twitter.com/hswong3i>
+  - <https://github.com/hswong3i>
