@@ -33,9 +33,10 @@
     {
       "inline": [
         "set -eu",
-        "sed -i s/mirror.centos.org/vault.centos.org/g /etc/yum.repos.d/*.repo",
-        "sed -i s/^#.*baseurl=http/baseurl=http/g /etc/yum.repos.d/*.repo",
-        "sed -i s/^mirrorlist=http/#mirrorlist=http/g /etc/yum.repos.d/*.repo",
+        "sed -i 's/mirror.centos.org/vault.centos.org/g' /etc/yum.repos.d/*.repo",
+        "sed -i 's?dl.fedoraproject.org/pub/epel?archives.fedoraproject.org/pub/archive/epel?g' /etc/yum.repos.d/*.repo", 
+        "sed -i 's/^#.*baseurl=http/baseurl=http/g' /etc/yum.repos.d/*.repo",
+        "sed -i 's/^mirrorlist=http/#mirrorlist=http/g' /etc/yum.repos.d/*.repo",
         "sed -i 's/enabled=1/enabled=0/g' /etc/yum/pluginconf.d/fastestmirror.conf || true",
         "yum makecache",
         "yum update -y",
