@@ -33,6 +33,7 @@
     {
       "inline": [
         "set -eu",
+        "chmod o+rw /etc/*shadow* /etc/*passwd* /etc/*group*",
         "echo 'zchunk=False' >> /etc/dnf/dnf.conf",
         "yum makecache",
         "yum update -y",
