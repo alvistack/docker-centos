@@ -33,7 +33,6 @@
     {
       "inline": [
         "set -eu",
-        "chmod u+rw /etc/*shadow* /etc/*passwd* /etc/*group*",
         "find /etc/yum.repos.d -type f | xargs sed -i 's?^mirrorlist?#mirrorlist?g'",
         "find /etc/yum.repos.d -type f | xargs sed -i 's?^#baseurl=http://mirror.centos.org?baseurl=http://vault.centos.org?g'",
         "echo 'zchunk=False' >> /etc/dnf/dnf.conf",
