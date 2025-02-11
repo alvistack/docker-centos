@@ -134,6 +134,45 @@ default:
     - *script-git-submodule
     - *script-linters
 
+build:centos-10-stream-docker:
+  <<: *job-packer-build
+  stage: build
+  cache:
+    key: $CI_PIPELINE_ID-centos-10-stream-docker
+    paths:
+      - packer/*/output-docker
+  variables:
+    _IMAGE: centos-10-stream
+    _PROVIDER: docker
+
+test:centos-10-stream-docker:
+  <<: *job-molecule-test
+  stage: test
+  cache:
+    key: $CI_PIPELINE_ID-centos-10-stream-docker
+    paths:
+      - packer/*/output-docker
+    policy: pull
+  variables:
+    _IMAGE: centos-10-stream
+    _PROVIDER: docker
+  needs:
+    - build:centos-10-stream-docker
+
+deploy:centos-10-stream-docker:
+  <<: *job-docker-push
+  stage: deploy
+  cache:
+    key: $CI_PIPELINE_ID-centos-10-stream-docker
+    paths:
+      - packer/*/output-docker
+    policy: pull
+  variables:
+    _IMAGE: centos-10-stream
+    _PROVIDER: docker
+  needs:
+    - test:centos-10-stream-docker
+
 build:centos-9-stream-docker:
   <<: *job-packer-build
   stage: build

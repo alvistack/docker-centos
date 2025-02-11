@@ -9,7 +9,7 @@ tag](https://img.shields.io/github/tag/alvistack/docker-centos.svg)](https://git
 [![GitHub
 license](https://img.shields.io/github/license/alvistack/docker-centos.svg)](https://github.com/alvistack/docker-centos/blob/master/LICENSE)
 [![Docker
-Pulls](https://img.shields.io/docker/pulls/alvistack/centos-8-stream.svg)](https://hub.docker.com/r/alvistack/centos-8-stream)
+Pulls](https://img.shields.io/docker/pulls/alvistack/centos-10-stream.svg)](https://hub.docker.com/r/alvistack/centos-10-stream)
 
 CentOS (from Community Enterprise Operating System) was a Linux
 distribution that provided a free, community-supported computing
@@ -22,6 +22,8 @@ Learn more about CentOS: <https://centos.org/>
 
 ## Supported Tags and Respective Packer Template Links
 
+- [`alvistack/centos-10-stream`](https://hub.docker.com/r/alvistack/centos-10-stream)
+  - [`packer/docker-10-stream/packer.json`](https://github.com/alvistack/docker-centos/blob/master/packer/docker-10-stream/packer.json)
 - [`alvistack/centos-9-stream`](https://hub.docker.com/r/alvistack/centos-9-stream)
   - [`packer/docker-9-stream/packer.json`](https://github.com/alvistack/docker-centos/blob/master/packer/docker-9-stream/packer.json)
 - [`alvistack/centos-8-stream`](https://hub.docker.com/r/alvistack/centos-8-stream)
@@ -48,14 +50,14 @@ Image](https://hub.docker.com/_/centos/) with some minor hack:
 Start SSHD:
 
     # Pull latest image
-    docker pull alvistack/centos-8-stream
+    docker pull alvistack/centos-10-stream
 
     # Run as detach
     docker run \
         -itd \
         --name centos \
         --publish 2222:22 \
-        alvistack/centos-8-stream
+        alvistack/centos-10-stream
 
 **Success**. SSHD is now available on port `2222`.
 
