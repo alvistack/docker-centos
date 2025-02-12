@@ -13,7 +13,7 @@
         "CMD [\"/usr/sbin/sshd\", \"-eD\"]"
       ],
       "commit": true,
-      "image": "quay.io/centos/centos:centos7",
+      "image": "quay.io/centos/centos:stream10",
       "privileged": true,
       "type": "docker"
     }
@@ -33,14 +33,11 @@
     {
       "inline": [
         "set -eu",
-        "sed -i 's/mirror.centos.org/vault.centos.org/g' /etc/yum.repos.d/*.repo",
-        "sed -i 's?dl.fedoraproject.org/pub/epel?archives.fedoraproject.org/pub/archive/epel?g' /etc/yum.repos.d/*.repo",
-        "sed -i 's/^#.*baseurl=http/baseurl=http/g' /etc/yum.repos.d/*.repo",
-        "sed -i 's/^mirrorlist=http/#mirrorlist=http/g' /etc/yum.repos.d/*.repo",
-        "sed -i 's/enabled=1/enabled=0/g' /etc/yum/pluginconf.d/fastestmirror.conf || true",
+        "echo 'zchunk=False' >> /etc/dnf/dnf.conf",
         "yum makecache",
         "yum update -y",
-        "yum install -y ca-certificates curl gcc glibc-common gnupg2 hostname iproute python3 sudo yum-utils"
+        "yum install -y --allowerasing ca-certificates curl gcc glibc-common glibc-langpack-en gnupg2 hostname iproute python3 sudo yum-utils",
+        "yum install -y --allowerasing coreutils curl"
       ],
       "type": "shell"
     },

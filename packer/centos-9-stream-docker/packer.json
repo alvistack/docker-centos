@@ -36,7 +36,7 @@
         "echo 'zchunk=False' >> /etc/dnf/dnf.conf",
         "yum makecache",
         "yum update -y",
-        "yum install -y --allowerasing ca-certificates curl gcc glibc-common glibc-langpack-en hostname iproute python3 sudo yum-utils",
+        "yum install -y --allowerasing ca-certificates curl gcc glibc-common glibc-langpack-en gnupg2 hostname iproute python3 sudo yum-utils",
         "yum install -y --allowerasing coreutils curl"
       ],
       "type": "shell"
